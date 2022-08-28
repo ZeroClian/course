@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.106.120.147:3306/course?characterEncoding=UTF8&autoReconnect=true&useSSL=false
+    username: course
+    password: course
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+
+logging:
+  level:
+    com.course.mapper: trace
