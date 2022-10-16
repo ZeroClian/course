@@ -4,6 +4,13 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: business
+          uri: lb://business
+          order: 1
+          predicates:
+            - Path=/business/**
+          filters:
+            - StripPrefix=1
         - id: system
           uri: lb://system
           order: 1

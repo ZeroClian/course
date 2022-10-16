@@ -6,7 +6,11 @@
 
 <script>
 export default {
-  name: "Welcome"
+  name: "Welcome",
+  mounted: function () {
+    // this.$parent.activeSidebar("welcome-sidebar")
+  },
+  methods: {}
 }
 </script>
 

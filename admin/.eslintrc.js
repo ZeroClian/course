@@ -13,6 +13,7 @@ module.exports = {
         'no-undef': 'off',
         'vue/no-unused-vars': 'off',
         'vue/require-v-for-key': 'off',
+        'vue/multi-word-component-names': 0,
     },
     parserOptions: {
         // parser: 'babel-eslint'
