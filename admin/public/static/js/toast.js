@@ -1,4 +1,4 @@
-const Toast = Swal.mixin({
+const toast = Swal.mixin({
     toast: true,
     position: 'top-end',
     padding: '1em',
@@ -11,21 +11,21 @@ const Toast = Swal.mixin({
     }
 })
 
-toast = {
+Toast = {
     success: function (message) {
-        Toast.fire({
+        toast.fire({
             icon: 'success',
             title: message
         })
     },
     error: function (message) {
-        Toast.fire({
+        toast.fire({
             icon: 'error',
             title: message
         })
     },
     warning: function (message) {
-        Toast.fire({
+        toast.fire({
             icon: 'warning',
             title: message
         })
