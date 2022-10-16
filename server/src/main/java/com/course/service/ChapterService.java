@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author ZeroClian
@@ -36,8 +37,17 @@ public class ChapterService {
     }
 
     public void save(ChapterDto chapterDto) {
-        chapterDto.setId(UuidUtil.getShortUuid());
-        Chapter chapter = CopyUtil.copy(chapterDto, Chapter.class);
-        chapterMapper.insert(chapter);
+        if (Objects.isNull(chapterDto.getId())) {
+            chapterDto.setId(UuidUtil.getShortUuid());
+            Chapter chapter = CopyUtil.copy(chapterDto, Chapter.class);
+            chapterMapper.insert(chapter);
+        } else {
+            Chapter chapter = CopyUtil.copy(chapterDto, Chapter.class);
+            chapterMapper.updateByPrimaryKey(chapter);
+        }
+    }
+
+    public void delete(String id) {
+        chapterMapper.deleteByPrimaryKey(id);
     }
 }

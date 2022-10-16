@@ -1,5 +1,5 @@
 <template>
-  <div class="pagination" role="group" aria-label="分页">
+  <div class="pagination pull-right" role="group" aria-label="分页">
     <button type="button" class="btn btn-default btn-white btn-round"
             v-bind:disabled="page === 1"
             v-on:click="selectPage(1)">
