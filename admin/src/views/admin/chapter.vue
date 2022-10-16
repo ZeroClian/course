@@ -122,7 +122,7 @@ export default {
     },
     save() {
       let _this = this
-      //校验
+      // 校验
       if (!Validator.require(_this.chapter.name, "名称") || !Validator.require(_this.chapter.courseId, "课程ID")) {
         return
       }
@@ -131,6 +131,8 @@ export default {
           $("#form-modal").modal("hide");
           _this.list(1);
           Toast.success("保存成功!");
+        } else {
+          Toast.error(respond.data.message);
         }
       })
     },

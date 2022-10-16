@@ -4,6 +4,7 @@ import com.course.dto.ChapterDto;
 import com.course.dto.PageDto;
 import com.course.dto.ResponseDto;
 import com.course.service.ChapterService;
+import com.course.util.ValidatorUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -28,6 +29,9 @@ public class ChapterController {
 
     @PostMapping("/save")
     public ResponseDto list(@RequestBody ChapterDto chapterDto) {
+        //校验
+        ValidatorUtil.require(chapterDto.getName(), "名称");
+        ValidatorUtil.require(chapterDto.getCourseId(), "课程ID");
         ResponseDto responseDto = new ResponseDto();
         chapterService.save(chapterDto);
         responseDto.setContent(chapterDto);
