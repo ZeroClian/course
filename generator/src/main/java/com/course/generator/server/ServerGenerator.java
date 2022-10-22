@@ -12,10 +12,10 @@ import java.util.*;
 
 public class ServerGenerator {
     static String MODULE = "business";
-    static String toDtoPath = "server\\src\\main\\java\\com\\course\\server\\dto\\";
-    static String toServicePath = "server\\src\\main\\java\\com\\course\\server\\service\\";
-    static String toControllerPath = MODULE + "\\src\\main\\java\\com\\course\\" + MODULE + "\\controller\\admin\\";
-    static String generatorConfigPath = "server\\src\\main\\resources\\generator\\generatorConfig.xml";
+    static String toDtoPath = "server/src/main/java/com/course/server/dto/";
+    static String toServicePath = "server/src/main/java/com/course/server/service/";
+    static String toControllerPath = MODULE + "/src/main/java/com/course/" + MODULE + "/controller/admin/";
+    static String generatorConfigPath = "server/src/main/resources/generator/generatorConfig.xml";
 
     public static void main(String[] args) throws Exception {
         String module = MODULE;
@@ -36,6 +36,7 @@ public class ServerGenerator {
         String Domain = tableElement.attributeValue("domainObjectName");
         String tableName = tableElement.attributeValue("tableName");
         String tableNameCn = DbUtil.getTableComment(tableName);
+        System.out.println(Domain);
         String domain = Domain.substring(0, 1).toLowerCase() + Domain.substring(1);
         System.out.println("表：" + tableElement.attributeValue("tableName"));
         System.out.println("Domain：" + tableElement.attributeValue("domainObjectName"));
