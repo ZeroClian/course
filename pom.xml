@@ -9,6 +9,7 @@
         <module>gateway</module>
         <module>server</module>
         <module>business</module>
+        <module>generator</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -66,6 +67,18 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>1.4.1</version>
+            </dependency>
+            <!-- 模版引擎 -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>2.3.31</version>
+            </dependency>
+            <!-- 读xml -->
+            <dependency>
+                <groupId>org.dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>2.1.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
