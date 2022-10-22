@@ -36,7 +36,6 @@ public class ServerGenerator {
         String Domain = tableElement.attributeValue("domainObjectName");
         String tableName = tableElement.attributeValue("tableName");
         String tableNameCn = DbUtil.getTableComment(tableName);
-        System.out.println(Domain);
         String domain = Domain.substring(0, 1).toLowerCase() + Domain.substring(1);
         System.out.println("表：" + tableElement.attributeValue("tableName"));
         System.out.println("Domain：" + tableElement.attributeValue("domainObjectName"));
