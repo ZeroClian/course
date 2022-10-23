@@ -111,7 +111,7 @@ export default {
     list(page) {
       let _this = this
       Loading.show()
-      _this.$ajax.post('http://127.0.0.1:9000/business/admin/chapter/list', {
+      _this.$ajax.post(process.env.VUE_APP_SERVER + '/business/admin/chapter/list', {
         page: page,
         size: _this.$refs.pagination.size
       }).then((respond) => {
@@ -126,7 +126,7 @@ export default {
       if (!Validator.require(_this.chapter.name, "名称") || !Validator.require(_this.chapter.courseId, "课程ID")) {
         return
       }
-      _this.$ajax.post('http://127.0.0.1:9000/business/admin/chapter/save', _this.chapter).then((respond) => {
+      _this.$ajax.post(process.env.VUE_APP_SERVER + '/business/admin/chapter/save', _this.chapter).then((respond) => {
         if (respond.data.success) {
           $("#form-modal").modal("hide");
           _this.list(1);
@@ -139,7 +139,7 @@ export default {
     del(id) {
       let _this = this;
       Confirm.show("确认删除大章,删除后不可恢复?", function () {
-        _this.$ajax.delete('http://127.0.0.1:9000/business/admin/chapter/delete/' + id).then((respond) => {
+        _this.$ajax.delete(process.env.VUE_APP_SERVER + '/business/admin/chapter/delete/' + id).then((respond) => {
           if (respond.data.success) {
             _this.list(1);
             Toast.success("删除成功!")

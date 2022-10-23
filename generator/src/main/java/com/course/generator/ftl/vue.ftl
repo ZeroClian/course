@@ -12,7 +12,7 @@
             </button>
         </p>
 
-        <pagination ref="pagination" v-bind:list="list" v-bind:itemCount="8"></pagination>
+
 
         <table id="simple-table" class="table  table-bordered table-hover">
             <thead>
@@ -93,6 +93,7 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+        <pagination ref="pagination" v-bind:list="list" v-bind:itemCount="10"></pagination>
     </div>
 </template>
 
